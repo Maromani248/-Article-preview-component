@@ -1,0 +1,236 @@
+/* VARIABLES DE COLORES */
+:root {
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+/*                                                       */
+
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--LightGrayishBlue);
+    font-family: 'Manrope', sans-serif;
+}
+
+/*                                                       */
+
+/* CARD */
+.card {
+    display: flex;
+    align-content: center;
+    background-color: white;
+    width: 50%;
+    border-radius: 13px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 12%;
+    box-shadow: 1px 1px 10px var(--GrayishBlue);
+}
+
+.card-left {
+    width: 95%;
+}
+
+#img-ilustration{
+    width: 100%;
+    height: 100%;
+    border-radius: 13px 0 0 13px;
+    position: relative;
+}
+
+.card-right {
+    margin: 40px;
+}
+
+.description h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--VeryDarkGrayishBlue);
+    letter-spacing: 1px;
+    line-height: 28px;
+}
+
+.description p {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--DesaturatedDarkBlue);
+    line-height: 22px;
+}
+
+.card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info-user {
+    display: flex;
+    align-items: center;
+}
+
+#img-avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.info-user > #name, #date {
+    color: var(--VeryDarkGrayishBlue);
+    font-size: 14px;
+    margin-left: 12px;
+    text-align: left;
+    line-height: 22px;
+}
+
+#date {
+    color: var(--GrayishBlue);
+    margin: 0;
+}
+
+.button-share {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border-style: none;
+    background-color: var(--LightGrayishBlue);
+    color: var(--DesaturatedDarkBlue);
+    align-content: center;
+    cursor: pointer;
+}
+
+#icon-share {
+    width: 17px;
+    display: inline-block;
+}
+
+.button-share:hover {
+    background-color: var(--DesaturatedDarkBlue);
+    color: var(--LightGrayishBlue); 
+}
+
+
+#icon-share:hover {
+    filter: brightness(3);
+}
+
+.option-share {
+    background-color: var(--VeryDarkGrayishBlue);
+    position: absolute;
+    bottom: 100px;
+    transform: translate(-43%,0);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px -5px black;
+    transform-origin: bottom;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.option-share.active {
+    scale: 1;
+    visibility: visible;
+}
+
+.option-share::after {
+    content: '';
+    background: var(--VeryDarkGrayishBlue);
+    width: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -60%) rotate(45deg); 
+}
+
+.option-share span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--GrayishBlue);
+    margin-right: 5px;
+}
+
+.option-share img {
+    font-size: 22px;
+}
+
+.option-share img:hover {
+    filter: invert(1);
+}
+
+.attribution {
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 700px;
+    font-size: small;
+}
+
+/*                                                       */
+
+/* RESPONSIVE */
+@media screen and (max-width: 76px){
+    .card {
+        max-width: 294px;
+        overflow: hidden;
+    }
+
+    .card-left, .card-right {
+        border-radius: 0;
+    }
+
+    .card-left {
+        height: 180px
+    }
+
+    .card-right {
+        padding: 30px 28px 20px;
+    }
+
+    .description h1 {
+        font-size: 15px;
+    }
+
+    .description p {
+        margin-bottom: 30px;
+    }
+
+    .card-foot {
+        position: relative;
+    }
+
+    #img-avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .share {
+        position: static;
+        z-index: 1;
+    }
+
+    .button-share {
+        font-size: 16px;
+    }
+
+    .option-share {
+        inset: -20px -28px;
+        border-radius: 0;
+        padding: 17px 30px;
+        z-index: -1;
+    }
+
+
+}
+
